@@ -164,18 +164,18 @@
         );
 
         var planet2 = createDetailedPlanet(
-            "planet2",
-            8,
-            new BABYLON.Vector3(-24, 0, 0),
-            { 
-                diffuseColor: new BABYLON.Color3(1, 1, 0.5), 
-                emissiveColor: new BABYLON.Color3(1, 0.8, 0.3) 
-            },
-            function () {
-                alert("Planet 2 clicked!");
-                window.location.href = "Mukul's Portfolio.html"
-            }
-        );
+    "planet2",
+    8,
+    new BABYLON.Vector3(-24, 0, 0),
+    { 
+        diffuseColor: new BABYLON.Color3(0.8, 0.7, 0.3),
+        emissiveColor: new BABYLON.Color3(0.9, 0.8, 0.4)
+    },
+    function () {
+        alert("Planet 2 clicked!");
+        window.location.href = "Mukul's Portfolio.html";
+    }
+);
 
         var ring = BABYLON.MeshBuilder.CreateTorus("ring", { diameter: 12, thickness: 0.5 }, scene);
         ring.parent = planet2;
@@ -215,3 +215,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
