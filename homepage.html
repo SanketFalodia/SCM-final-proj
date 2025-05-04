@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Creations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Colors and Backgrounds */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: url('hobg.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0px 0px 20px black;
+        }
+
+        .hero-section h1 {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: #ff007f;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section .text-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('Holmg.jpg') no-repeat center center/cover;
+            width: 80%;
+            height: 50%;
+            opacity: 0.7;
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        .feature-section {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        .feature i {
+            font-size: 4rem;
+            color: #ff007f;
+        }
+
+        .team-section {
+            padding: 60px 20px;
+            background: black;
+            color: white;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border: 5px solid #ff007f;
+        }
+
+        .video-section {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #203a43, #0f2027);
+            color: white;
+            text-align: center;
+        }
+
+        .video-section video {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .scroll-button {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .scroll-button button {
+            background-color: #ff007f;
+            color: white;
+            font-size: 1.5rem;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 50px;
+            transition: 0.3s ease;
+        }
+
+        .scroll-button button:hover {
+            background-color: #ff338f;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="text-background"></div> <!-- bgimage -->
+        <h1 data-aos="fade-up">Galaxy Creations</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Your Ideas, Our Magic, Affordable Gaming Solutions</p>
+        <a href="#features" class="btn btn-lg" style="background-color: #ff007f; color: white;" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="feature-section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 feature" data-aos="fade-up">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Fast Turnaround</h3>
+                    <p>From concept to launch, we deliver your game at lightning speed.</p>
+                </div>
+                <div class="col-md-4 feature" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Affordable Gaming</h3>
+                    <p>We make gaming accessible by bringing your ideas to life without breaking the bank.</p>
+                </div>
+                <div class="col-md-4 feature" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Collaborative Process</h3>
+                    <p>Stay involved every step of the way with our user-focused approach.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="container">
+            <h2 class="text-center" data-aos="zoom-in">Meet the Team</h2>
+            <p class="text-center mb-5" data-aos="zoom-in" data-aos-delay="200">The creators turning your dreams into reality</p>
+            <div class="row">
+                <div class="col-md-4 team-member" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/150x150/?person,communication" alt="Team Member">
+                    <h4>Mukul Nishad</h4>
+                    <p>Communications Specialist</p>
+                </div>
+                <div class="col-md-4 team-member" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://source.unsplash.com/150x150/?person,design" alt="Team Member">
+                    <h4>Muskan Mittal</h4>
+                    <p>Game Designer</p>
+                </div>
+                <div class="col-md-4 team-member" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://source.unsplash.com/150x150/?person,coder" alt="Team Member">
+                    <h4>Sanket Falodia</h4>
+                    <p>Backend Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2 data-aos="zoom-in">See Our Work in Action</h2>
+        <p data-aos="zoom-in" data-aos-delay="200">A glimpse into the future of gaming</p>
+        <video controls autoplay loop muted data-aos="fade-up" data-aos-delay="400">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Scroll to Toggle Section -->
+    <div class="scroll-button">
+        <button onclick="redirectToForm()">Submit Your Idea</button>
+    </div>
+
+    <footer>
+        &copy; 2024 GameSpark Creations | Crafted with <i class="fas fa-heart"></i> by our passionate team.
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function redirectToForm() {
+            window.location.href = "FEEFORM2.html"; // Replace with your form page URL
+        }
+    </script>
+</body>
+</html>

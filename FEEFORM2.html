@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Idea Submission Form</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #1b1b1b;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #2c2f33;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00ff99;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #f0f0f0;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #2b2b2b;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #00ff99;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #00ff99;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #00cc7a;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <!-- Include EmailJS script -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Submit Your Game Idea</h1>
+        <form id="gameIdeaForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="purpose">Purpose of the Game:</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="">Select Purpose</option>
+                    <option value="Personal">For Own Use</option>
+                    <option value="Publishing">For Publishing</option>
+                    <option value="Both">For Both</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Your Budget (in Rupees):</label>
+                <input type="number" id="budget" name="budget" placeholder="Enter your budget" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gameType">Type of Game:</label>
+                <select id="gameType" name="gameType" required>
+                    <option value="">Select Game Type</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="RPG">Role-Playing (RPG)</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Strategy">Strategy</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Simulation">Simulation</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gameDesign">Game Design Preferences:</label>
+                <textarea id="gameDesign" name="gameDesign" rows="5" placeholder="Describe your game design ideas, preferences, or inspirations" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalDetails">Additional Features/Details (Optional):</label>
+                <textarea id="additionalDetails" name="additionalDetails" rows="4" placeholder="Mention any extra features or specifics you want in the game"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Game Idea">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('gameIdeaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Game idea submitted successfully!');
+                }, function(error) {
+                    alert('Failed to submit the game idea, please try again.');
+                    console.error('EmailJS error:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gaming Portfolio - Galaxy Theme</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('./Galaxy.jpg'); /* Replace with your local image file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100vh;
+            touch-action: none;
+            display: block;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 50, 0.8);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffdd57 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffdd57 !important;
+        }
+
+        .info-section {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background: rgba(0, 0, 50, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Galaxy Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <canvas id="renderCanvas" width="970" height="695" touch-action="none"></canvas>
+
+    <div class="info-section">
+        <h3>Explore the Galaxy</h3>
+        <p>Click on planets to discover more.</p>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+        var engine = new BABYLON.Engine(canvas, true);
+        var scene = new BABYLON.Scene(engine);
+        scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
+
+        var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 50, BABYLON.Vector3.Zero(), scene);
+        camera.attachControl(canvas, true);
+
+        var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+
+        function createDetailedPlanet(name, size, position, materialConfig, action) {
+            var planet = BABYLON.MeshBuilder.CreateSphere(name, { diameter: size, segments: 32 }, scene);
+
+            var material = new BABYLON.StandardMaterial(name + "Material", scene);
+            material.diffuseColor = materialConfig.diffuseColor;
+            material.emissiveColor = materialConfig.emissiveColor;
+            material.specularColor = new BABYLON.Color3(0.5, 0.5, 0.5);
+
+            material.bumpTexture = new BABYLON.NoiseProceduralTexture(name + "Noise", 256, scene);
+            material.bumpTexture.octaves = 4;
+            material.bumpTexture.persistence = 0.8;
+            material.bumpTexture.brightness = 0.5;
+            material.bumpTexture.uScale = 2;
+            material.bumpTexture.vScale = 2;
+
+            planet.material = material;
+            planet.position = position;
+
+            planet.actionManager = new BABYLON.ActionManager(scene);
+            planet.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, action));
+
+            return planet;
+        }
+
+        var bigPlanet = createDetailedPlanet(
+            "bigPlanet",
+            14,
+            new BABYLON.Vector3(0, 0, 0),
+            { 
+                diffuseColor: new BABYLON.Color3(1, 0.6, 0), 
+                emissiveColor: new BABYLON.Color3(1, 0.6, 0.2) 
+            },
+            function () {
+                alert("YOUR GAME CREATION IS JUST A STEP AWAY.");
+                window.location.href = "homepage.html";
+            }
+        );
+        bigPlanet.material.bumpTexture.uScale = 3;
+        bigPlanet.material.bumpTexture.vScale = 3;
+
+        var planet1 = createDetailedPlanet(
+            "planet1",
+            8,
+            new BABYLON.Vector3(20, 0, 0),
+            { 
+                diffuseColor: new BABYLON.Color3(0.2, 0.4, 1), 
+                emissiveColor: new BABYLON.Color3(0.1, 0.2, 0.6) 
+            },
+            function () {
+                alert("Planet 1 clicked!,redirecting to Muskan's Portfolio");
+                window.location.href = "assignment3.html";
+            }
+        );
+
+        var planet3 = createDetailedPlanet(
+            "planet3",
+            8,
+            new BABYLON.Vector3(0, 0, 0),
+            { 
+                diffuseColor: new BABYLON.Color3(2, 0.5, 0.2), 
+                emissiveColor: new BABYLON.Color3(1, 0.5, 0.2) 
+            },
+            function () {
+                alert("Planet 3 clicked!");
+                window.location.href = "sanket.html"
+            }
+        );
+
+        var planet2 = createDetailedPlanet(
+            "planet2",
+            8,
+            new BABYLON.Vector3(-24, 0, 0),
+            { 
+                diffuseColor: new BABYLON.Color3(1, 1, 0.5), 
+                emissiveColor: new BABYLON.Color3(1, 0.8, 0.3) 
+            },
+            function () {
+                alert("Planet 2 clicked!");
+                window.location.href = "Port.html"
+            }
+        );
+
+        var ring = BABYLON.MeshBuilder.CreateTorus("ring", { diameter: 12, thickness: 0.5 }, scene);
+        ring.parent = planet2;
+        ring.rotation.x = Math.PI / 3;
+        ring.rotation.z = Math.PI / 6;
+        ring.material = new BABYLON.StandardMaterial("ringMaterial", scene);
+        ring.material.diffuseColor = new BABYLON.Color3(1, 1, 0);
+
+        var angle1 = 0, angle2 = Math.PI / 2, angle3 = Math.PI;
+
+        scene.registerBeforeRender(function () {
+            angle1 += 0.01;
+            angle2 += 0.01;
+            angle3 += 0.01;
+
+            planet1.position.x = bigPlanet.position.x + 20 * Math.cos(angle1);
+            planet1.position.z = bigPlanet.position.z + 20 * Math.sin(angle1);
+
+            planet2.position.x = bigPlanet.position.x + 24 * Math.cos(angle2);
+            planet2.position.z = bigPlanet.position.z + 24 * Math.sin(angle2);
+
+            planet3.position.x = bigPlanet.position.x + 24 * Math.cos(angle3);
+            planet3.position.z = bigPlanet.position.z + 24 * Math.sin(angle3);
+        });
+
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
