@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukul Nishad's Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2980b9;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #e74c3c;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #e74c3c;
+            font-size: 2.5em;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Styling for sections */
+        .bio, .skills, .projects, .contact {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .bio:hover, .skills:hover, .projects:hover, .contact:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .bio p, .contact p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Skills list and projects list */
+        .skills ul, .projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li, .projects li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .skills li:hover, .projects li:hover {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact input, .contact textarea {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact button {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 12px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2980b9;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mukul Nishad</h1>
+    <p>Turning Ideas into Games</p>
+</header>
+
+<div class="container">
+
+    <section class="bio">
+        <h2>About Me</h2>
+        <p>Hello! I'm Mukul, a passionate game developer. I specialize in collecting game ideas from users and then collaborating with my team to bring those ideas to life through engaging and creative games. With a keen eye for detail and a drive for innovation, I strive to create immersive gaming experiences that players will love.</p>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Game Idea Collection & Conceptualization</li>
+            <li>Collaboration with Development Teams</li>
+            <li>Project Management</li>
+            <li>Creative Problem Solving</li>
+            <li>Game Design & Development</li>
+            <li>Storytelling for Games</li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Game Idea Collection Platform</strong> - A web platform where users can submit their game ideas, which are then reviewed and passed on to development teams.</li>
+            <li><strong>Game Concept Development</strong> - Worked with a team to conceptualize and develop game mechanics for a multiplayer online game.</li>
+            <li><strong>Mobile Game Prototype</strong> - Designed and prototyped a mobile game based on user feedback and collaboration with the dev team.</li>
+            <li><strong>Game Testing and Feedback</strong> - Coordinated beta testing phases and gathered user feedback for optimization.</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Interested in discussing your game ideas or collaborating? Feel free to reach out!</p>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Mukul Nishad. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
