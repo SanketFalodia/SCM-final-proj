@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Muskan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Muskan</div>
+            <ul class="nav-links">
+                <li><a href="muskan.html">Home</a></li>
+                <li><a href="muskan_about.html">About</a></li>
+                <li><a href="muskan_portfolio.html">Portfolio</a></li>
+                <li><a href="muskan_resume.html">Resume</a></li>
+                <li><a href="muskan_skills.html" class="active">Skills</a></li>
+                <li><a href="muskan_contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>My Skills</h1>
+            <div class="breadcrumb">
+                <a href="muskan.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Skills</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <p>What I'm good at</p>
+            </div>
+            
+            <div class="skills-intro">
+                <p>I have acquired a diverse range of skills throughout my career as a web developer and designer. Below are the key areas of my expertise. Click on any skill to see it reach its full potential!</p>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="technical">Technical Skills</button>
+                    <button class="category-tab" data-category="design">Design Skills</button>
+                    <button class="category-tab" data-category="professional">Professional Skills</button>
+                </div>
+                
+                <div class="category-content active" id="technical">
+                    <div class="skills-container">
+                        <div class="skill-box animate-fade-up">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h3>HTML5</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="95"></div>
+                            </div>
+                            <p>Semantic markup, accessibility, forms, multimedia integration</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="200">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h3>CSS3</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="90"></div>
+                            </div>
+                            <p>Responsive design, animations</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="400">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="600">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h3>React</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="80"></div>
+                            </div>
+                            <p>Components, hooks, state management, React Router</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="800">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h3>Node.js</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="75"></div>
+                            </div>
+                            <p>Express.js, RESTful APIs, MongoDB, authentication</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="1000">
+                            <div class="skill-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <h3>Git & GitHub</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="85"></div>
+                            </div>
+                            <p>Version control, branching, merging, pull requests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content" id="professional">
+                    <div class="skills-container">
+                        <div class="skill-box animate-fade-up">
+                            <div class="skill-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Communication</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="90"></div>
+                            </div>
+                            <p>Clear articulation of ideas, active listening, presentation skills</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="200">
+                            <div class="skill-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Teamwork</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="95"></div>
+                            </div>
+                            <p>Collaboration, conflict resolution, shared responsibility</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="400">
+                            <div class="skill-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3>Project Management</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="85"></div>
+                            </div>
+                            <p>Planning, organization, time management, resource allocation</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="600">
+                            <div class="skill-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Creativity</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="90"></div>
+                            </div>
+                            <p>Innovative thinking, problem-solving, design ideation</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="800">
+                            <div class="skill-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Problem Solving</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="85"></div>
+                            </div>
+                            <p>Analytical thinking, troubleshooting, solution development</p>
+                        </div>
+                        <div class="skill-box animate-fade-up" data-delay="1000">
+                            <div class="skill-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Time Management</h3>
+                            <div class="skill-name">
+                                <span>Expertise Level</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-per" data-per="90"></div>
+                            </div>
+                            <p>Prioritization, deadline management, efficiency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tools I Use</h2>
+                <p>Software and technologies I work with</p>
+            </div>
+            <div class="tools-container">
+                <div class="tool-item animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="100">
+                    <div class="tool-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="200">
+                    <div class="tool-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="300">
+                    <div class="tool-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="400">
+                    <div class="tool-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="500">
+                    <div class="tool-icon">
+                        <i class="fab fa-sass"></i>
+                    </div>
+                    <h3>Git</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="700">
+                    <div class="tool-icon">
+                        <i class="fab fa-figma"></i>
+                </div>
+                    <h3>Bootstrap</h3>
+                </div>
+                <div class="tool-item animate-fade-up" data-delay="1000">
+                    <div class="tool-icon">
+                        <i class="fab fa-npm"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-preview">
+        <div class="container">
+            <div class="contact-preview-content">
+                <div class="contact-text">
+                    <h2>Let's Work Together</h2>
+                    <p>Have a project in mind? Let's discuss how I can help you achieve your goals.</p>
+                </div>
+                <div class="contact-button">
+                    <a href="muskan_contact.html" class="btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Muskan</h3>
+                    <p>Software Development Enthusiast</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="muskan.html">Home</a></li>
+                        <li><a href="muskan_about.html">About</a></li>
+                        <li><a href="muskan_portfolio.html">Portfolio</a></li>
+                        <li><a href="muskan_contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> muskanmittal249@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9253XXXXXX</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Haryana,India</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muskan-mittal-06b53a324/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/muskanmittal295/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="foote-text">&copy; <span id="current-year">2025</span> Muskan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="skill.js"></script>
+</body>
+</html>
