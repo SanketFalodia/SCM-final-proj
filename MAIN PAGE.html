@@ -116,6 +116,20 @@
 
             return planet;
         }
+        var planet4 = createDetailedPlanet(
+       "planet4",
+        6,
+         new BABYLON.Vector3(0, 0, 0),  // Temporary position, will be animated
+      { 
+        diffuseColor: new BABYLON.Color3(0.3, 1, 0.6),
+        emissiveColor: new BABYLON.Color3(0.1, 0.8, 0.4)
+      },
+     function () {
+        alert("Planet 4 clicked!");
+        window.location.href = "muskan.html";  // Replace with actual page
+     }
+    );
+        
 
         var bigPlanet = createDetailedPlanet(
             "bigPlanet",
@@ -184,12 +198,13 @@
         ring.material = new BABYLON.StandardMaterial("ringMaterial", scene);
         ring.material.diffuseColor = new BABYLON.Color3(1, 1, 0);
 
-        var angle1 = 0, angle2 = Math.PI / 2, angle3 = Math.PI;
+        var angle1 = 0, angle2 = Math.PI / 2, angle3 = Math.PI, angle4=Math.PI/4;
 
         scene.registerBeforeRender(function () {
             angle1 += 0.01;
             angle2 += 0.01;
             angle3 += 0.01;
+            angle4 += 0.01;
 
             planet1.position.x = bigPlanet.position.x + 20 * Math.cos(angle1);
             planet1.position.z = bigPlanet.position.z + 20 * Math.sin(angle1);
@@ -199,6 +214,9 @@
 
             planet3.position.x = bigPlanet.position.x + 24 * Math.cos(angle3);
             planet3.position.z = bigPlanet.position.z + 24 * Math.sin(angle3);
+
+            planet4.position.x = bigPlanet.position.x + 28 * Math.cos(angle4);
+            planet4.position.z = bigPlanet.position.z + 28 * Math.sin(angle4);
         });
 
         engine.runRenderLoop(function () {
