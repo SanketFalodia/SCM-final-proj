@@ -141,9 +141,9 @@
             },
             function () {
 
-                alert("Thank you sir");
+                alert("Game creation is just a click away");
  
-                window.location.href = "https://www.linkedin.com/in/dr-aman-kumar-5b876519b/?originalSubdomain=in";
+                window.location.href = "homepage.html";
             }
         );
         bigPlanet.material.bumpTexture.uScale = 3;
@@ -190,36 +190,6 @@
         window.location.href = "Mukul's Portfolio.html";
     }
 );
-    // Mentor Star - Glowing Star Shape
-var mentorStarCore = BABYLON.MeshBuilder.CreateSphere("mentorStarCore", { diameter: 3 }, scene);
-mentorStarCore.position = new BABYLON.Vector3(0, 15, 0);  // Above the central planet
-
-var mentorMaterial = new BABYLON.StandardMaterial("mentorStarMaterial", scene);
-mentorMaterial.emissiveColor = new BABYLON.Color3(1, 0.9, 0.5);  // Soft golden glow
-mentorMaterial.diffuseColor = new BABYLON.Color3(0.5, 0.5, 0);   // Dim body to emphasize glow
-mentorStarCore.material = mentorMaterial;
-
-// Add glow (spikes using torus shapes)
-for (let i = 0; i < 6; i++) {
-    let spike = BABYLON.MeshBuilder.CreateTorus(`spike${i}`, {
-        diameter: 6,
-        thickness: 0.2
-    }, scene);
-    spike.material = mentorMaterial;
-    spike.parent = mentorStarCore;
-    spike.rotation.x = (i % 2 === 0) ? Math.PI / 2 : 0;
-    spike.rotation.y = (i * Math.PI / 3);
-}
-
-// Add clickable action
-mentorStarCore.actionManager = new BABYLON.ActionManager(scene);
-mentorStarCore.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
-    BABYLON.ActionManager.OnPickTrigger,
-    function () {
-        alert("Redirecting to our Mentor's Profile");
-        window.location.href = "https://www.linkedin.com/in/dr-aman-kumar-5b876519b/?originalSubdomain=in";
-    }
-));
         var ring = BABYLON.MeshBuilder.CreateTorus("ring", { diameter: 12, thickness: 0.5 }, scene);
         ring.parent = planet2;
         ring.rotation.x = Math.PI / 3;
