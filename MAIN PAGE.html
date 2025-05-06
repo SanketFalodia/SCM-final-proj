@@ -228,6 +228,7 @@ mentorStarCore.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
         ring.material.diffuseColor = new BABYLON.Color3(1, 1, 0);
 
         var angle1 = 0, angle2 = Math.PI / 2, angle3 = Math.PI, angle4=3*Math.PI/2;
+        let startTime = performance.now();
 
         scene.registerBeforeRender(function () {
             angle1 += 0.01;
@@ -248,7 +249,13 @@ mentorStarCore.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
             planet4.position.y = 0;  // Keep aligned
             planet4.position.z = bigPlanet.position.z + 20 * Math.sin(angle4);
 
+            const elapsed = (performance.now() - startTime) / 1000; // seconds
+            const intensity = 0.9 + 0.1 * Math.sin(elapsed * 3); // twinkle faster
+
+            mentorMaterial.emissiveColor = new BABYLON.Color3(intensity, intensity * 0.85, 0.5);
+
         });
+        
 
         engine.runRenderLoop(function () {
             scene.render();
